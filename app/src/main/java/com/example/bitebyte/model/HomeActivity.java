@@ -1,5 +1,4 @@
 package com.example.bitebyte.model;
-
 import com.example.bitebyte.R;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
