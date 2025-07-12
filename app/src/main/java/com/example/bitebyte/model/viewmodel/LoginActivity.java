@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         correoEditText = findViewById(R.id.editTextCorreo);
         contrasenaEditText = findViewById(R.id.editTextContrasena);
         nombreEditText = findViewById(R.id.editTextNombre);
-        rolEditText = findViewById(R.id.editTextRol);
+        rolEditText = findViewById(R.id.spinnerRol);
         loginButton = findViewById(R.id.buttonLogin);
 
         auth = FirebaseAuth.getInstance();

@@ -2,90 +2,107 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
-    tools:context=".model.RegistrarUsuarioActivity">
+    android:background="#FAFAFA"
+    android:padding="16dp">
 
-    <TextView
-        android:id="@+id/rusignin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/registro_titulo"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <!-- Imagen centrada arriba -->
 
-    <TextView
-        android:id="@+id/rutextUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/usuario"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/rusignin"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="32dp" />
-
-    <EditText
-        android:id="@+id/ruUsername"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_usuario"
-        android:inputType="text"
-        android:autofillHints="username"
-        android:minHeight="48dp"
-        app:layout_constraintTop_toBottomOf="@id/rutextUsuario"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
-
-    <TextView
-        android:id="@+id/ruTextContraseña"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/contraseña"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/ruUsername"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="24dp" />
-
-    <EditText
-        android:id="@+id/ruPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_contraseña"
-        android:inputType="textPassword"
-        android:autofillHints="password"
-        android:minHeight="48dp"
-        app:layout_constraintTop_toBottomOf="@id/ruTextContraseña"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
-
-    <Button
-        android:id="@+id/ruRegistrar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/registrar"
-        android:backgroundTint="#F44336"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/ruPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp" />
+    <!-- Card centrada vertical debajo -->
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@drawable/bitebyte_user"
+        android:layout_marginTop="92dp"
         android:contentDescription="@string/imagen_usuario"
-        app:layout_constraintTop_toBottomOf="@id/ruRegistrar"
+        android:src="@drawable/bitebyte_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/imageView2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"/>
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/rusignin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/registro_titulo"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:letterSpacing="0.02" />
+
+            <TextView
+                android:id="@+id/rutextUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/usuario"
+                android:textSize="16sp"
+                android:textColor="#555"
+                android:layout_marginTop="20dp" />
+
+            <EditText
+                android:id="@+id/ruUsername"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="@string/hint_usuario"
+                android:background="@drawable/input_background"
+                android:backgroundTint="#DDDDDD"
+                android:paddingHorizontal="12dp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/ruTextContraseña"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contraseña"
+                android:textSize="16sp"
+                android:textColor="#555"
+                android:layout_marginTop="20dp" />
+
+            <EditText
+                android:id="@+id/ruPassword"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="@string/hint_contraseña"
+                android:inputType="textPassword"
+                android:background="@drawable/input_background"
+                android:backgroundTint="#DDDDDD"
+                android:paddingHorizontal="12dp"
+                android:layout_marginTop="8dp" />
+
+            <Button
+                android:id="@+id/ruRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/registrar"
+                android:backgroundTint="#F44336"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="24dp"
+                android:elevation="4dp"
+                android:paddingVertical="14dp"
+                android:stateListAnimator="@drawable/button_elevation_animator" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

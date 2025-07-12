@@ -31,9 +31,7 @@
         <activity
             android:name=".model.RegistrarUsuarioActivity"
             android:exported="false" />
-        <activity
-            android:name=".model.HomeActivity"
-            android:exported="false" />
+        <activity android:name=".model.HomeActivity" />
 
         <activity android:name=".model.LoginActivity"
             android:exported="false" />

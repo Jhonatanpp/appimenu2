@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +16,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText editTextCorreo, editTextContrasena, editTextNombre, editTextRol;
+    private EditText editTextCorreo, editTextContrasena, editTextNombre;
+    private Spinner spinnerRol;
     private Button buttonLogin;
     private FirebaseAuth firebaseAuth;
 
@@ -27,17 +30,24 @@ public class LoginActivity extends AppCompatActivity {
         editTextCorreo = findViewById(R.id.editTextCorreo);
         editTextContrasena = findViewById(R.id.editTextContrasena);
         editTextNombre = findViewById(R.id.editTextNombre);
-        editTextRol = findViewById(R.id.editTextRol);
+        spinnerRol = findViewById(R.id.spinnerRol);
         buttonLogin = findViewById(R.id.buttonLogin);
 
         // Instancia de Firebase
         firebaseAuth = FirebaseAuth.getInstance();
 
+        // Cargar opciones en el Spinner
+        ArrayAdapter<String> adapterSpinner = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_spinner_dropdown_item,
+                new String[]{"cliente", "mesero", "cocina"});
+        spinnerRol.setAdapter(adapterSpinner);
+
         buttonLogin.setOnClickListener(v -> {
             String correo = editTextCorreo.getText().toString().trim();
             String contrasena = editTextContrasena.getText().toString().trim();
             String nombre = editTextNombre.getText().toString().trim();
-            String rol = editTextRol.getText().toString().trim().toLowerCase();
+            String rol = spinnerRol.getSelectedItem().toString();
 
             if (correo.isEmpty() || contrasena.isEmpty() || nombre.isEmpty() || rol.isEmpty()) {
                 Toast.makeText(this, "Por favor completa todos los campos", Toast.LENGTH_SHORT).show();
@@ -70,7 +80,6 @@ public class LoginActivity extends AppCompatActivity {
         if (user == null) return;
 
         Intent intent;
-
         switch (rol) {
             case "cliente":
                 intent = new Intent(this, MenuClienteActivity.class);
@@ -82,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                 intent = new Intent(this, PedidosEntrantesActivity.class);
                 break;
             default:
-                Toast.makeText(this, "Rol no válido. Usa cliente, mesero o cocina.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Rol no válido", Toast.LENGTH_LONG).show();
                 return;
         }
 
