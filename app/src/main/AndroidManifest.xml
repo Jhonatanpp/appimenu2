@@ -15,26 +15,35 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BiteByte"
         tools:targetApi="31">
+
+        <!-- Pantalla de inicio -->
         <activity
             android:name=".model.SplashActivity"
-            android:exported="false" />
-        <!-- ACTIVIDAD PRINCIPAL -->
-        <activity
-            android:name=".model.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+
+
+        <!-- ACTIVIDAD PRINCIPAL -->
+        <activity
+            android:name=".model.MainActivity"
+            android:exported="false" />
+
         <activity
             android:name=".model.RegistrarUsuarioActivity"
             android:exported="false" />
-        <activity android:name=".model.HomeActivity" />
 
-        <activity android:name=".model.LoginActivity"
+        <activity
+            android:name=".model.HomeActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".model.LoginActivity"
             android:exported="false" />
     </application>
-
 </manifest>
