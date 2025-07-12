@@ -45,6 +45,7 @@ public class HistorialPedidosActivity extends AppCompatActivity {
 
         adapter = new HistorialAdapter(this, listaPedidos, this::mostrarDialogoReseña);
         recyclerHistorial.setAdapter(adapter);
+        recyclerHistorial.addItemDecoration(new SpacesItemDecoration(16, true));
 
         cargarPedidos();
     }

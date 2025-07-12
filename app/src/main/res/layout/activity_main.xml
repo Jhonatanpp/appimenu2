@@ -3,20 +3,39 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F9FAFB"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="32dp">
+    android:padding="24dp">
 
-    <Button
-        android:id="@+id/btnIngresar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ingresar" />
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:padding="24dp"
+        android:clipToOutline="true"
+        android:outlineProvider="background"
+        android:elevation="8dp"
+        android:layout_margin="16dp">
 
-    <Button
-        android:id="@+id/btnCrearUsuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Crear Usuario"
-        android:layout_marginTop="16dp"/>
+        <Button
+            android:id="@+id/btnIngresar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingresar"
+            android:textColor="#FFF"
+            android:background="@drawable/rounded_button"
+            android:padding="16dp" />
+
+        <Button
+            android:id="@+id/btnCrearUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crear Usuario"
+            android:textColor="#FFF"
+            android:background="@drawable/rounded_button_secondary"
+            android:padding="16dp"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
 </LinearLayout>

@@ -5,12 +5,41 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="#F9FAFB"
     android:padding="24dp">
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bienvenido a BiteByte"
-        android:textSize="22sp"
-        android:textStyle="bold"/>
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        android:clipToOutline="true"
+        android:outlineProvider="background"
+        android:layout_margin="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bienvenido a Imenu"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#111827"
+            android:letterSpacing="0.02"
+            android:lineSpacingExtra="4dp"
+            android:shadowColor="#80000000"
+            android:shadowDx="0"
+            android:shadowDy="2"
+            android:shadowRadius="4"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Explora el menú y disfruta!"
+            android:textSize="16sp"
+            android:textColor="#6B7280"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
 </LinearLayout>
