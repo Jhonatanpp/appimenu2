@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:padding="16dp"
+    android:background="#FFF8EC">
+
+    <TextView
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Tu experiencia"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/inputFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="¿Cómo estuvo tu plato o qué salió mal?"
+        android:minHeight="100dp"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:layout_marginTop="24dp"/>
+
+    <Button
+        android:id="@+id/btnEnviarFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar"
+        android:textColor="#FFF"
+        android:backgroundTint="#F44336"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

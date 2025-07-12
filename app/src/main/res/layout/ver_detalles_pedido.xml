@@ -1,0 +1,47 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="16dp" android:background="#FFF8EC">
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTituloDetalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detalle del Pedido"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvNombreCliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cliente: Maria"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/tvEstado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estado: En preparación"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tvListaPlatos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Pizza sin cebolla\n• Ensalada con extra de queso"
+            android:layout_marginTop="24dp"/>
+
+        <Button
+            android:id="@+id/btnMarcarPedidoListo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Marcar como Listo"
+            android:textColor="#FFF"
+            android:backgroundTint="#4CAF50"
+            android:layout_marginTop="32dp"/>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "730008592629",
+    "project_id": "bitebyte-9c60f",
+    "storage_bucket": "bitebyte-9c60f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:730008592629:android:4d4f1d42c28a04f00fa5bc",
+        "android_client_info": {
+          "package_name": "com.example.bitebyte"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE0W9l6f6rh2mVUNqUfykaE5PYcg0NOy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

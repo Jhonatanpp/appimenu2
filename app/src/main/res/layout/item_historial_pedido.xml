@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FAFAFA"
+    android:elevation="2dp"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/textIdPedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pedido ID"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/textEstadoPedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estado"
+        android:textColor="#666"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/textReseña"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reseña"
+        android:textColor="#444"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btnReseñar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dejar Reseña"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFF"
+        android:padding="10dp"
+        android:visibility="gone" />
+</LinearLayout>
