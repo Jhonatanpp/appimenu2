@@ -7,6 +7,7 @@
     android:padding="24dp"
     android:background="#FFF8EC">
 
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="120dp"
@@ -17,6 +18,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+
 
     <TextView
         android:id="@+id/pptitle"
