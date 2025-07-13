@@ -1,13 +1,11 @@
 package com.example.bitebyte.model;
 
-
-import android.content.Intent;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.bitebyte.model.PersonalizarPlatoActivity;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,31 +15,27 @@ import java.util.List;
 
 public class PlatoAdapter extends RecyclerView.Adapter<PlatoAdapter.PlatoViewHolder> {
 
-    private List<Plato> listaPlatos;
+    private final List<Plato> listaPlatos;
+    private final Context context;
 
-    public PlatoAdapter(List<Plato> listaPlatos) {
+    public PlatoAdapter(List<Plato> listaPlatos, Context context) {
         this.listaPlatos = listaPlatos;
+        this.context = context;
     }
 
     @NonNull
     @Override
     public PlatoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View vista = LayoutInflater.from(parent.getContext()).inflate(R.layout.plato_en_menu, parent, false);
+        View vista = LayoutInflater.from(context).inflate(R.layout.item_plato, parent, false);
         return new PlatoViewHolder(vista);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PlatoViewHolder holder, int position) {
         Plato plato = listaPlatos.get(position);
-        holder.textNombre.setText(plato.getNombre());
-        holder.textDescripcion.setText(plato.getDescripcion());
-        holder.textPrecio.setText("$" + String.format("%.2f", plato.getPrecio()));
-
-        holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), PersonalizarPlatoActivity.class);
-            intent.putExtra("plato", plato);
-            v.getContext().startActivity(intent);
-        });
+        holder.nombre.setText(plato.getNombre());
+        holder.descripcion.setText(plato.getDescripcion());
+        holder.precio.setText(String.format("$ %.2f", plato.getPrecio()));
     }
 
     @Override
@@ -50,13 +44,13 @@ public class PlatoAdapter extends RecyclerView.Adapter<PlatoAdapter.PlatoViewHol
     }
 
     public static class PlatoViewHolder extends RecyclerView.ViewHolder {
-        TextView textNombre, textDescripcion, textPrecio;
+        TextView nombre, descripcion, precio;
 
         public PlatoViewHolder(@NonNull View itemView) {
             super(itemView);
-            textNombre = itemView.findViewById(R.id.tvNombrePlato);
-            textDescripcion = itemView.findViewById(R.id.tvDescripcionPlato);
-            textPrecio = itemView.findViewById(R.id.tvPrecioPlato);
+            nombre = itemView.findViewById(R.id.textNombrePlato);
+            descripcion = itemView.findViewById(R.id.textDescripcionPlato);
+            precio = itemView.findViewById(R.id.textPrecioPlato);
         }
     }
 }

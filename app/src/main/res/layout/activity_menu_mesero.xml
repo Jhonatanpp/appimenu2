@@ -5,20 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Contenedor de los fragments -->
     <FrameLayout
-        android:id="@+id/frameContainerCliente"
+        android:id="@+id/frameContainerMesero"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottomNavigationCliente" />
+        android:layout_above="@id/bottomNavigationMesero" />
 
-    <!-- Barra de navegación inferior -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationCliente"
+        android:id="@+id/bottomNavigationMesero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="?android:attr/windowBackground"
-        app:menu="@menu/menu_cliente_bottom" />
-
+        app:menu="@menu/menu_mesero_bottom"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

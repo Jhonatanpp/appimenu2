@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_cliente"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="Menú" />
+
+    <item
+        android:id="@+id/unirse_mesa"
+        android:icon="@android:drawable/ic_input_add"
+        android:title="Unirse" />
+
+    <item
+        android:id="@+id/perfil_usuario"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="Perfil" />
+</menu>

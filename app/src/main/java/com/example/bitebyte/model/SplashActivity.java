@@ -44,15 +44,16 @@ public class SplashActivity extends Activity {
                 logo.startAnimation(scale);
             }
 
-            @Override public void onAnimationStart(Animation animation) {}
-            @Override public void onAnimationRepeat(Animation animation) {}
+            @Override
+            public void onAnimationStart(Animation animation) {}
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {}
         });
 
-        // Ir al MainActivity después de 3 segundos
         new Handler().postDelayed(() -> {
             startActivity(new Intent(SplashActivity.this, MainActivity.class));
             finish();
         }, 3000);
     }
 }
-

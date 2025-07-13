@@ -40,7 +40,7 @@ public class MenuGeneralRestaurante extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         listaPlatos = new ArrayList<>();
-        adapter = new PlatoAdapter(listaPlatos);
+        adapter = new PlatoAdapter(listaPlatos, this); // CORREGIDO
         recyclerView.setAdapter(adapter);
 
         refPlatos = FirebaseDatabase.getInstance().getReference("platos");

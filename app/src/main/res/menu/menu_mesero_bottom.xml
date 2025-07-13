@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/perfil_mesero"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="Perfil" />
+
+    <item
+        android:id="@+id/crear_mesa"
+        android:icon="@android:drawable/ic_input_add"
+        android:title="Crear Mesa" />
+</menu>
