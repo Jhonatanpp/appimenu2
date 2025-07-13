@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8EC"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgDetallePlato"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/food"
+            android:contentDescription="Imagen del plato"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/tvNombrePlatoDetalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spaghetti Carbonara"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333"/>
+
+        <TextView
+            android:id="@+id/tvDescripcionPlatoDetalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pasta con salsa cremosa y tocino."
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tvPrecioPlatoDetalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$25.000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#ED3E3B"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/btnAgregarCarrito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agregar al carrito"
+            android:backgroundTint="#ED3E3B"
+            android:textColor="#FFF"
+            android:layout_marginTop="24dp"/>
+    </LinearLayout>
+</ScrollView>

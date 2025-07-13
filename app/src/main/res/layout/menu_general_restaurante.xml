@@ -3,20 +3,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#FFF">
+    android:background="#FFF8EC"
+    android:padding="24dp">
 
-    <ProgressBar
-        android:id="@+id/progressBarMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:visibility="gone"
-        style="?android:attr/progressBarStyleLarge" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewMenu"
+    <!-- Título del menú -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="8dp"/>
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        android:padding="20dp"
+        android:layout_marginBottom="24dp"
+        android:clipToOutline="true"
+        android:outlineProvider="background"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menú Principal"
+            android:textColor="#333"
+            android:textSize="26sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Bienvenido! Elige una opción"
+            android:textColor="#666"
+            android:textSize="16sp"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <!-- Opciones del menú -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:elevation="6dp"
+        android:padding="20dp"
+        android:clipToOutline="true"
+        android:outlineProvider="background"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/btnPedidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pedidos"
+            android:textColor="#FFF"
+            android:backgroundTint="#F44336"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnMesas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mesas"
+            android:textColor="#FFF"
+            android:backgroundTint="#4CAF50"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnHistorial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Historial"
+            android:textColor="#FFF"
+            android:backgroundTint="#3F51B5"
+            android:padding="16dp"/>
+    </LinearLayout>
+
 </LinearLayout>

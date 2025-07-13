@@ -35,9 +35,6 @@ public class MenuGeneralRestaurante extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_general_restaurante);
 
-        recyclerView = findViewById(R.id.recyclerViewMenu);
-        progressBar = findViewById(R.id.progressBarMenu);
-
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         listaPlatos = new ArrayList<>();
         adapter = new PlatoAdapter(listaPlatos);

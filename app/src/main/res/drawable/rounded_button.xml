@@ -1,7 +1,17 @@
-<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Gradiente suave de rojo -->
     <gradient
-        android:startColor="#4F46E5"
-        android:endColor="#6366F1"
-        android:angle="90"/>
-    <corners android:radius="16dp"/>
+        android:startColor="#ED3E3B"
+        android:centerColor="#E53935"
+        android:endColor="#C62828"
+        android:angle="90" />
+
+    <!-- Bordes redondeados -->
+    <corners android:radius="16dp" />
+
+    <!-- Borde tenue para simular relieve -->
+    <stroke
+        android:width="1dp"
+        android:color="#AA000000" />
 </shape>

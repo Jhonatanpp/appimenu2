@@ -3,27 +3,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:background="#FFFFFF">
+    android:background="#FFF8EC"
+    android:padding="16dp">
 
-    <!-- Texto que muestra el ID o número de la mesa -->
-    <TextView
-        android:id="@+id/tvMesaAsignada"
-        android:layout_width="wrap_content"
+    <!-- Encabezado del menú con efecto 3D -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mesa: "
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp" />
+        android:background="@android:color/white"
+        android:elevation="6dp"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        android:clipToOutline="true"
+        android:outlineProvider="background">
 
-    <!-- Lista de platos disponibles -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewPlatos"
+        <TextView
+            android:id="@+id/tvMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333" />
+    </LinearLayout>
+
+    <!-- Contenedor con bordes, sombra y separación para los items -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:clipToPadding="false"
-        android:paddingBottom="16dp"
-        android:scrollbars="vertical" />
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:elevation="6dp"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        android:clipToOutline="true"
+        android:outlineProvider="background">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerHistorial"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="16dp"
+            android:overScrollMode="always" />
+
+    </LinearLayout>
 
 </LinearLayout>
