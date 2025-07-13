@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:text="Aceptar"
             android:textColor="#FFF"
-            android:backgroundTint="#F44336"
+            android:backgroundTint="@android:color/black"
             android:layout_marginStart="16dp"/>
     </LinearLayout>
 </LinearLayout>
