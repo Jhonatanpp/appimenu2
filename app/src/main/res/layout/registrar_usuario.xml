@@ -7,30 +7,33 @@
     android:background="#FAFAFA"
     android:padding="16dp">
 
-    <!-- Imagen centrada arriba -->
-
-    <!-- Card centrada vertical debajo -->
-
+    <!-- Imagen superior centrada -->
     <ImageView
+
         android:id="@+id/imageView2"
         android:layout_width="160dp"
         android:layout_height="160dp"
+
+        android:id="@+id/ruImageLogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+
         android:layout_marginTop="92dp"
         android:contentDescription="@string/imagen_usuario"
         android:src="@drawable/bitebyte_user"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Card de contenido -->
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="8dp"
         app:cardUseCompatPadding="true"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/imageView2"
+        app:layout_constraintTop_toBottomOf="@id/ruImageLogo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -42,59 +45,57 @@
             android:padding="24dp">
 
             <TextView
-                android:id="@+id/rusignin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/registro_titulo"
+                android:text="Registro de Usuario"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="#333"
-                android:letterSpacing="0.02" />
-
-            <TextView
-                android:id="@+id/rutextUsuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/usuario"
-                android:textSize="16sp"
-                android:textColor="#555"
-                android:layout_marginTop="20dp" />
+                android:letterSpacing="0.02"
+                android:layout_marginBottom="12dp"/>
 
             <EditText
-                android:id="@+id/ruUsername"
+                android:id="@+id/ruNombre"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:hint="@string/hint_usuario"
+                android:hint="Nombre"
                 android:background="@drawable/input_background"
-                android:backgroundTint="#DDDDDD"
                 android:paddingHorizontal="12dp"
-                android:layout_marginTop="8dp" />
-
-            <TextView
-                android:id="@+id/ruTextContraseña"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/contraseña"
-                android:textSize="16sp"
-                android:textColor="#555"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="8dp"/>
 
             <EditText
-                android:id="@+id/ruPassword"
+                android:id="@+id/ruCorreo"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:hint="@string/hint_contraseña"
+                android:hint="Correo"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/input_background"
+                android:paddingHorizontal="12dp"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/ruContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Contraseña"
                 android:inputType="textPassword"
                 android:background="@drawable/input_background"
-                android:backgroundTint="#DDDDDD"
                 android:paddingHorizontal="12dp"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="16dp"/>
+
+            <Spinner
+                android:id="@+id/ruRol"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/input_background"
+                android:padding="10dp"
+                android:layout_marginTop="16dp"/>
 
             <Button
                 android:id="@+id/ruRegistrar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/registrar"
+                android:text="Registrar"
                 android:backgroundTint="#F44336"
                 android:textColor="@android:color/white"
                 android:layout_marginTop="24dp"
@@ -104,5 +105,4 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
