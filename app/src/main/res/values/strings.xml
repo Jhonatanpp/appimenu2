@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BiteByte</string>
+    <string name="app_name">imenú</string>
     <string name="registro_titulo">Crea tu usuario</string>
     <string name="usuario">Usuario</string>
     <string name="hint_usuario">Nombre de usuario</string>
