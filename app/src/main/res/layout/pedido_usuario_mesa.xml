@@ -1,26 +1,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content" android:padding="12dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@android:color/white"
-    android:layout_marginBottom="8dp">
+    android:padding="16dp"
+    android:elevation="4dp"
+    android:layout_marginBottom="12dp"
+    android:clipToOutline="true"
+    android:outlineProvider="background">
 
     <TextView
         android:id="@+id/tvNombreUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Carlos"
-        android:textStyle="bold"/>
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#2C3E50"
+        android:layout_marginBottom="4dp"/>
 
     <TextView
         android:id="@+id/tvNombrePlato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hamburguesa"/>
+        android:text="Hamburguesa"
+        android:textSize="16sp"
+        android:textColor="#555"
+        android:layout_marginBottom="4dp"/>
 
     <TextView
         android:id="@+id/tvEstadoPedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="En proceso"
+        android:textSize="14sp"
+        android:textStyle="bold"
         android:textColor="#4CAF50"/>
 </LinearLayout>

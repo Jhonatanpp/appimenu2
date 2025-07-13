@@ -1,14 +1,44 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:padding="16dp"
-    android:background="#FFF8EC">
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutEstadoPedido"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8EC"
+    android:padding="16dp">
+
+    <!-- Imagen del chef / plato animada -->
+
+    <!-- Título animable -->
+
+    <ImageView
+        android:id="@+id/imgChef"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="108dp"
+        android:contentDescription="Chef animado"
+        android:src="@drawable/load"
+        android:translationY="-80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:id="@+id/tvTituloAnimable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Estado del Pedido"
-        android:textSize="24sp"
-        android:textStyle="bold"/>
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#333"
+        app:layout_constraintTop_toBottomOf="@id/imgChef"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
 
+    <!-- Estado actual animable -->
     <TextView
         android:id="@+id/tvEstadoActual"
         android:layout_width="wrap_content"
@@ -16,5 +46,10 @@
         android:text="En preparación"
         android:textSize="20sp"
         android:textColor="#FF9800"
-        android:layout_marginTop="32dp"/>
-</LinearLayout>
+
+        app:layout_constraintTop_toBottomOf="@id/tvTituloAnimable"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

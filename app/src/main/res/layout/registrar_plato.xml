@@ -1,102 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="#FFF8EC">
+    android:background="#FFF8EC"
+    android:padding="16dp">
 
-    <!-- Título -->
-    <TextView
-        android:id="@+id/rptitleRegistro"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nuevo Plato!"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#212121"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp" />
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:padding="24dp"
+        android:elevation="6dp"
+        android:clipToOutline="true"
+        android:outlineProvider="background">
 
-    <ImageView
-        android:id="@+id/rpimagePlato"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:scaleType="centerInside"
-        android:src="@drawable/food"
-        android:contentDescription="Imagen del plato"
-        app:layout_constraintTop_toBottomOf="@id/rptitleRegistro"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        <TextView
+            android:id="@+id/rptitleRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nuevo Plato!"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#333"
+            android:layout_gravity="center_horizontal" />
 
-    <Button
-        android:id="@+id/rpbtnSeleccionarImagen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Agrega tu imagen"
-        app:layout_constraintTop_toBottomOf="@id/rpimagePlato"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"
-        android:textColor="#4CAF50"
-        android:backgroundTint="@android:color/white" />
+        <ImageView
+            android:id="@+id/rpimagePlato"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/food"
+            android:contentDescription="Imagen del plato"
+            android:layout_gravity="center_horizontal" />
 
+        <Button
+            android:id="@+id/rpbtnSeleccionarImagen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agrega tu imagen"
+            android:textColor="#ED3E3B"
+            android:backgroundTint="@android:color/white"
+            android:elevation="2dp"
+            android:layout_marginTop="12dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="10dp"
+            android:stateListAnimator="@null"/>
 
-    <EditText
-        android:id="@+id/rpinputNombre"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:hint="Cómo se llama el plato?"
-        android:inputType="textPersonName"
-        android:textColor="#212121"
-        app:layout_constraintTop_toBottomOf="@id/rpbtnSeleccionarImagen"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp" />
+        <EditText
+            android:id="@+id/rpinputNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="¿Cómo se llama el plato?"
+            android:inputType="text"
+            android:padding="14dp"
+            android:background="@drawable/rounded_edittext"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"/>
 
-    <EditText
-        android:id="@+id/rpinputDescripcion"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:hint="Dinos qué es!"
-        android:inputType="textMultiLine"
-        android:textColor="#212121"
-        app:layout_constraintTop_toBottomOf="@id/rpinputNombre"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        <EditText
+            android:id="@+id/rpinputDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dinos qué es!"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:padding="14dp"
+            android:background="@drawable/rounded_edittext"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
 
-    <EditText
-        android:id="@+id/rpinputPrecio"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:hint="¿Cuánto vale?"
-        android:inputType="numberDecimal"
-        android:textColor="#212121"
-        app:layout_constraintTop_toBottomOf="@id/rpinputDescripcion"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        <EditText
+            android:id="@+id/rpinputPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="¿Cuánto vale?"
+            android:inputType="numberDecimal"
+            android:padding="14dp"
+            android:background="@drawable/rounded_edittext"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
 
-    <Button
-        android:id="@+id/rpbtnRegistrarPlato"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#F44336"
-        android:minHeight="48dp"
-        android:text="Registrar plato"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rpinputPrecio" />
+        <Button
+            android:id="@+id/rpbtnRegistrarPlato"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrar plato"
+            android:textColor="#FFF"
+            android:backgroundTint="#ED3E3B"
+            android:elevation="4dp"
+            android:layout_marginTop="32dp"
+            android:padding="14dp"
+            android:stateListAnimator="@null"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

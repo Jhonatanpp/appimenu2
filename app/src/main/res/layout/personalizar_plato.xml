@@ -4,24 +4,36 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="#FFF">
+    android:background="#FFF8EC">
 
-    <TextView
-        android:id="@+id/tvNombrePersonalizado"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nombre del Plato"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp" />
+        android:background="@android:color/white"
+        android:elevation="6dp"
+        android:padding="20dp"
+        android:layout_marginBottom="20dp"
+        android:clipToOutline="true"
+        android:outlineProvider="background">
+
+        <TextView
+            android:id="@+id/tvNombrePersonalizado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre del Plato"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#333" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvDescripcionPersonalizada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Descripción"
-        android:textSize="14sp"
-        android:layout_marginBottom="8dp" />
+        android:textSize="16sp"
+        android:textColor="#555"
+        android:layout_marginBottom="12dp" />
 
     <TextView
         android:id="@+id/tvPrecioPersonalizado"
@@ -30,8 +42,8 @@
         android:text="$0.00"
         android:textColor="#FF5722"
         android:textStyle="bold"
-        android:textSize="16sp"
-        android:layout_marginBottom="16dp" />
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp" />
 
     <EditText
         android:id="@+id/editTextComentario"
@@ -40,9 +52,9 @@
         android:hint="Comentarios o preferencias"
         android:minLines="3"
         android:gravity="top"
-        android:backgroundTint="#999"
-        android:padding="12dp"
-        android:layout_marginBottom="16dp" />
+        android:background="@drawable/rounded_edittext"
+        android:padding="14dp"
+        android:layout_marginBottom="20dp" />
 
     <Button
         android:id="@+id/btnConfirmarPedido"
@@ -51,6 +63,9 @@
         android:text="Confirmar Pedido"
         android:backgroundTint="#4CAF50"
         android:textColor="#FFF"
-        android:padding="12dp" />
+        android:padding="16dp"
+        android:elevation="4dp"
+        android:clipToOutline="true"
+        android:outlineProvider="background" />
 
 </LinearLayout>
