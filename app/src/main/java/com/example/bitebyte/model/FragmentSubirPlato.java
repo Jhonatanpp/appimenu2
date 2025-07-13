@@ -14,44 +14,45 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.bitebyte.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class FragmentSubirPlato extends Fragment {
 
-    private EditText editTextNombrePlato, editTextDescripcionPlato, editTextPrecioPlato, editTextComentarioPlato;
-    private Button botonSubirPlato;
-
+    private EditText editTextNombre, editTextDescripcion, editTextPrecio, editTextCategoria;
+    private Button botonSubir;
     private DatabaseReference refPlatos;
-
-    public FragmentSubirPlato() {}
+    private FirebaseAuth auth;
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_subir_plato, container, false);
 
-        editTextNombrePlato = view.findViewById(R.id.editTextNombrePlato);
-        editTextDescripcionPlato = view.findViewById(R.id.editTextDescripcionPlato);
-        editTextPrecioPlato = view.findViewById(R.id.editTextPrecioPlato);
-        editTextComentarioPlato = view.findViewById(R.id.editTextComentarioPlato);
-        botonSubirPlato = view.findViewById(R.id.botonSubirPlato);
+        editTextNombre = view.findViewById(R.id.editTextNombrePlato);
+        editTextDescripcion = view.findViewById(R.id.editTextDescripcionPlato);
+        editTextPrecio = view.findViewById(R.id.editTextPrecioPlato);
+        editTextCategoria = view.findViewById(R.id.editTextCategoriaPlato);
+        botonSubir = view.findViewById(R.id.botonSubirPlato);
 
+        auth = FirebaseAuth.getInstance();
         refPlatos = FirebaseDatabase.getInstance().getReference("platos");
 
-        botonSubirPlato.setOnClickListener(v -> subirPlato());
+        botonSubir.setOnClickListener(v -> subirPlato());
 
         return view;
     }
 
     private void subirPlato() {
-        String nombre = editTextNombrePlato.getText().toString().trim();
-        String descripcion = editTextDescripcionPlato.getText().toString().trim();
-        String precioStr = editTextPrecioPlato.getText().toString().trim();
-        String comentario = editTextComentarioPlato.getText().toString().trim();
+        String nombre = editTextNombre.getText().toString().trim();
+        String descripcion = editTextDescripcion.getText().toString().trim();
+        String precioStr = editTextPrecio.getText().toString().trim();
+        String categoria = editTextCategoria.getText().toString().trim();
+        String idCocinero = auth.getCurrentUser().getUid();
 
-        if (TextUtils.isEmpty(nombre) || TextUtils.isEmpty(descripcion) || TextUtils.isEmpty(precioStr)) {
-            Toast.makeText(getContext(), "Por favor completa todos los campos obligatorios", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(nombre) || TextUtils.isEmpty(descripcion) || TextUtils.isEmpty(precioStr) || TextUtils.isEmpty(categoria)) {
+            Toast.makeText(getContext(), "Por favor llena todos los campos", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -63,18 +64,19 @@ public class FragmentSubirPlato extends Fragment {
             return;
         }
 
-        Plato nuevoPlato = new Plato(nombre, descripcion, precio, comentario);
-        String id = refPlatos.push().getKey();
+        String idPlato = refPlatos.push().getKey();
+        Plato plato = new Plato(idPlato, nombre, descripcion, precio, categoria, idCocinero);
 
-        if (id != null) {
-            refPlatos.child(id).setValue(nuevoPlato);
-            Toast.makeText(getContext(), "Plato subido correctamente", Toast.LENGTH_SHORT).show();
-            editTextNombrePlato.setText("");
-            editTextDescripcionPlato.setText("");
-            editTextPrecioPlato.setText("");
-            editTextComentarioPlato.setText("");
-        } else {
-            Toast.makeText(getContext(), "Error al generar ID para el plato", Toast.LENGTH_SHORT).show();
-        }
+        refPlatos.child(idPlato).setValue(plato).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Toast.makeText(getContext(), "Plato subido correctamente", Toast.LENGTH_SHORT).show();
+                editTextNombre.setText("");
+                editTextDescripcion.setText("");
+                editTextPrecio.setText("");
+                editTextCategoria.setText("");
+            } else {
+                Toast.makeText(getContext(), "Error al subir plato", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

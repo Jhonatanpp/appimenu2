@@ -4,23 +4,25 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.bitebyte.R;
 
 import java.util.List;
 
 public class PlatoAdapter extends RecyclerView.Adapter<PlatoAdapter.PlatoViewHolder> {
 
-    private final List<Plato> listaPlatos;
-    private final Context context;
+    private Context context;
+    private List<Plato> listaPlatos;
 
-    public PlatoAdapter(List<Plato> listaPlatos, Context context) {
-        this.listaPlatos = listaPlatos;
+    public PlatoAdapter(Context context, List<Plato> listaPlatos) {
         this.context = context;
+        this.listaPlatos = listaPlatos;
     }
 
     @NonNull
@@ -33,9 +35,18 @@ public class PlatoAdapter extends RecyclerView.Adapter<PlatoAdapter.PlatoViewHol
     @Override
     public void onBindViewHolder(@NonNull PlatoViewHolder holder, int position) {
         Plato plato = listaPlatos.get(position);
-        holder.nombre.setText(plato.getNombre());
-        holder.descripcion.setText(plato.getDescripcion());
-        holder.precio.setText(String.format("$ %.2f", plato.getPrecio()));
+        holder.txtNombre.setText(plato.getNombre());
+        holder.txtDescripcion.setText(plato.getDescripcion());
+        holder.txtPrecio.setText("$" + plato.getPrecio());
+
+        if (plato.getImagenUrl() != null && !plato.getImagenUrl().isEmpty()) {
+            Glide.with(context)
+                    .load(plato.getImagenUrl())
+                    .placeholder(R.drawable.food)
+                    .into(holder.imgPlato);
+        } else {
+            holder.imgPlato.setImageResource(R.drawable.food);
+        }
     }
 
     @Override
@@ -44,13 +55,15 @@ public class PlatoAdapter extends RecyclerView.Adapter<PlatoAdapter.PlatoViewHol
     }
 
     public static class PlatoViewHolder extends RecyclerView.ViewHolder {
-        TextView nombre, descripcion, precio;
+        TextView txtNombre, txtDescripcion, txtPrecio;
+        ImageView imgPlato;
 
         public PlatoViewHolder(@NonNull View itemView) {
             super(itemView);
-            nombre = itemView.findViewById(R.id.textNombrePlato);
-            descripcion = itemView.findViewById(R.id.textDescripcionPlato);
-            precio = itemView.findViewById(R.id.textPrecioPlato);
+            txtNombre = itemView.findViewById(R.id.txtNombrePlato);
+            txtDescripcion = itemView.findViewById(R.id.txtDescripcion);
+            txtPrecio = itemView.findViewById(R.id.txtPrecio);
+            imgPlato = itemView.findViewById(R.id.imgPlato);
         }
     }
 }

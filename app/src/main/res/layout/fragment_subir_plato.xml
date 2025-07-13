@@ -2,64 +2,47 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="#FAFAFA">
+    android:padding="24dp">
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Subir Plato"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="24dp"
-            android:textColor="#333"/>
+        android:layout_height="wrap_content">
 
         <EditText
             android:id="@+id/editTextNombrePlato"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre del plato"
-            android:inputType="textPersonName"
-            android:layout_marginBottom="16dp" />
+            android:hint="Nombre del Plato" />
 
         <EditText
             android:id="@+id/editTextDescripcionPlato"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Descripción del plato"
+            android:hint="Descripción"
             android:inputType="textMultiLine"
-            android:minLines="3"
-            android:layout_marginBottom="16dp" />
+            android:minLines="2" />
 
         <EditText
             android:id="@+id/editTextPrecioPlato"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Precio"
-            android:inputType="numberDecimal"
-            android:layout_marginBottom="16dp" />
+            android:inputType="numberDecimal" />
 
         <EditText
-            android:id="@+id/editTextComentarioPlato"
+            android:id="@+id/editTextCategoriaPlato"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Comentario (opcional)"
-            android:inputType="text"
-            android:layout_marginBottom="24dp" />
+            android:hint="Categoría" />
 
         <Button
             android:id="@+id/botonSubirPlato"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Subir Plato"
-            android:backgroundTint="#F44336"
-            android:textColor="@android:color/white"
-            android:padding="12dp"/>
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 </ScrollView>

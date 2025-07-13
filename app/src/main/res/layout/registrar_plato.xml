@@ -21,6 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="24dp" />
 
+    <!-- Imagen del plato -->
     <ImageView
         android:id="@+id/rpimagePlato"
         android:layout_width="150dp"
@@ -33,6 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
 
+    <!-- Botón para seleccionar imagen -->
     <Button
         android:id="@+id/rpbtnSeleccionarImagen"
         android:layout_width="wrap_content"
@@ -45,13 +47,13 @@
         android:textColor="#4CAF50"
         android:backgroundTint="@android:color/white" />
 
-
+    <!-- Campo: Nombre -->
     <EditText
         android:id="@+id/rpinputNombre"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
-        android:hint="Cómo se llama el plato?"
+        android:hint="¿Cómo se llama el plato?"
         android:inputType="textPersonName"
         android:textColor="#212121"
         app:layout_constraintTop_toBottomOf="@id/rpbtnSeleccionarImagen"
@@ -59,6 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="24dp" />
 
+    <!-- Campo: Descripción -->
     <EditText
         android:id="@+id/rpinputDescripcion"
         android:layout_width="0dp"
@@ -72,6 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
 
+    <!-- Campo: Precio -->
     <EditText
         android:id="@+id/rpinputPrecio"
         android:layout_width="0dp"
@@ -85,6 +89,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
 
+    <!-- Campo: Categoría -->
+    <EditText
+        android:id="@+id/rpinputCategoria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="¿A qué categoría pertenece?"
+        android:inputType="text"
+        android:textColor="#212121"
+        app:layout_constraintTop_toBottomOf="@id/rpinputPrecio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Campo: Comentario -->
+    <EditText
+        android:id="@+id/rpinputComentario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="¿Algún detalle adicional?"
+        android:inputType="text"
+        android:textColor="#212121"
+        app:layout_constraintTop_toBottomOf="@id/rpinputCategoria"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Botón: Registrar -->
     <Button
         android:id="@+id/rpbtnRegistrarPlato"
         android:layout_width="0dp"
@@ -95,8 +128,7 @@
         android:text="Registrar plato"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rpinputPrecio" />
+        app:layout_constraintTop_toBottomOf="@id/rpinputComentario" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

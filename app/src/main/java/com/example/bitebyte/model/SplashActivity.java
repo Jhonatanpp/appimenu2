@@ -1,59 +1,64 @@
 package com.example.bitebyte.model;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.*;
 import com.example.bitebyte.R;
 
-public class SplashActivity extends Activity {
+public class SplashActivity extends AppCompatActivity {
+
+    private FirebaseAuth firebaseAuth;
+    private DatabaseReference refUsuarios;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        ImageView logo = findViewById(R.id.logoImage);
+        firebaseAuth = FirebaseAuth.getInstance();
+        refUsuarios = FirebaseDatabase.getInstance().getReference("usuarios");
 
-        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
-        Animation bounce = AnimationUtils.loadAnimation(this, R.anim.bounce_up);
-        Animation scale = AnimationUtils.loadAnimation(this, R.anim.scale_up);
+        new Handler().postDelayed(this::verificarUsuario, 2000);
+    }
 
-        logo.startAnimation(fadeIn);
+    private void verificarUsuario() {
+        // Fuerza cierre de sesión para pruebas
+        firebaseAuth.signOut();
 
-        fadeIn.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {}
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                logo.startAnimation(bounce);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {}
-        });
-
-        bounce.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                logo.startAnimation(scale);
-            }
-
-            @Override
-            public void onAnimationStart(Animation animation) {}
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {}
-        });
-
-        new Handler().postDelayed(() -> {
-            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if (user == null) {
+            // No hay sesión activa: voy a MainActivity (login/registro)
+            startActivity(new Intent(this, MainActivity.class));
             finish();
-        }, 3000);
+            return;
+        }
+
+        // (El resto del código no llega a ejecutarse en modo prueba)
+        String uid = user.getUid();
+        refUsuarios.child(uid).child("rol")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String rol = snapshot.getValue(String.class);
+                        Class<?> destino;
+                        if ("cliente".equals(rol))       destino = MenuClienteActivity.class;
+                        else if ("mesero".equals(rol))   destino = MenuMeseroActivity.class;
+                        else if ("cocinero".equals(rol)) destino = MisPlatosActivity.class;
+                        else                              destino = MainActivity.class;
+
+                        startActivity(new Intent(SplashActivity.this, destino));
+                        finish();
+                    }
+                    @Override public void onCancelled(@NonNull DatabaseError error) {
+                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                        finish();
+                    }
+                });
     }
 }

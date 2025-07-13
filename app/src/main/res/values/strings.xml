@@ -7,4 +7,12 @@
     <string name="hint_contraseña">Ingresa tu contraseña</string>
     <string name="registrar">Registrar</string>
     <string name="imagen_usuario">Imagen del usuario</string>
+    <string name="agregar_plato">Agregar Plato</string>
+    <string-array name="estados_orden">
+        <item>PENDIENTE</item>
+        <item>EN_PROCESO</item>
+        <item>COMPLETADA</item>
+        <item>EN_PREPARACION</item>
+        <item>CANCELADA</item>
+    </string-array>
 </resources>

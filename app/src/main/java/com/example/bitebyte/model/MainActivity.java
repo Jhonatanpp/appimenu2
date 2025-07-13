@@ -1,12 +1,16 @@
 package com.example.bitebyte.model;
 
-import com.example.bitebyte.R;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.bitebyte.R;
+import com.example.bitebyte.model.LoginActivity;
+import com.example.bitebyte.model.RegistrarUsuarioActivity;
+
 public class MainActivity extends AppCompatActivity {
+
     private Button btnIngresar, btnCrearUsuario;
 
     @Override
@@ -23,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnCrearUsuario.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, com.example.bitebyte.model.RegistrarUsuarioActivity.class);
+            Intent intent = new Intent(MainActivity.this, RegistrarUsuarioActivity.class);
             startActivity(intent);
         });
     }

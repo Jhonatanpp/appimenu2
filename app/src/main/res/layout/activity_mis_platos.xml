@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8EC">
+
+    <!-- 1. Toolbar arriba -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMisPlatos"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:title="Mis Platos"
+        android:titleTextColor="@android:color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <!-- 2. Tu TextView con el ID del cocinero -->
+    <TextView
+        android:id="@+id/textCocineroId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tu ID es: "
+        android:textStyle="italic"
+        android:padding="16dp" />
+
+    <!-- 3. RecyclerView ocupa el resto -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMisPlatos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp" />
+
+</LinearLayout>

@@ -1,49 +1,36 @@
 package com.example.bitebyte.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Orden {
-
-    private String id;  // Este campo debe existir en Firebase
+    private String idOrden;
     private String idUsuario;
+    private String idCocinero;  // ⚠️ Este campo debe existir
+    private String codigoMesa;
     private ArrayList<Plato> platos;
     private EstadoOrden estado;
+
     private String reseña;
 
-    // Constructor vacío obligatorio para Firebase
     public Orden() {
-        this.platos = new ArrayList<>();
-        this.estado = EstadoOrden.PENDIENTE;
+        // Constructor vacío para Firebase
     }
 
-    // Constructor básico
-    public Orden(String id, String idUsuario) {
-        this.id = id;
+    public Orden(String idOrden, String idUsuario, String codigoMesa, ArrayList<Plato> platos, EstadoOrden estado, String idCocinero) {
+        this.idOrden = idOrden;
         this.idUsuario = idUsuario;
-        this.platos = new ArrayList<>();
-        this.estado = EstadoOrden.PENDIENTE;
-    }
-
-    // Constructor completo
-    public Orden(String id, String idUsuario, ArrayList<Plato> platos, EstadoOrden estado) {
-        this.id = id;
-        this.idUsuario = idUsuario;
-        this.platos = platos != null ? platos : new ArrayList<>();
-        this.estado = estado != null ? estado : EstadoOrden.PENDIENTE;
-    }
-
-    // Getters y setters
-    public String getId() {
-        return id;
+        this.codigoMesa = codigoMesa;
+        this.platos = platos;
+        this.estado = estado;
+        this.idCocinero = idCocinero;
     }
 
     public String getIdOrden() {
-        return id;
+        return idOrden;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdOrden(String idOrden) {
+        this.idOrden = idOrden;
     }
 
     public String getIdUsuario() {
@@ -54,13 +41,20 @@ public class Orden {
         this.idUsuario = idUsuario;
     }
 
+    public String getCodigoMesa() {
+        return codigoMesa;
+    }
+
+    public void setCodigoMesa(String codigoMesa) {
+        this.codigoMesa = codigoMesa;
+    }
+
     public ArrayList<Plato> getPlatos() {
-        if (platos == null) platos = new ArrayList<>();
         return platos;
     }
 
     public void setPlatos(ArrayList<Plato> platos) {
-        this.platos = platos != null ? platos : new ArrayList<>();
+        this.platos = platos;
     }
 
     public EstadoOrden getEstado() {
@@ -68,9 +62,8 @@ public class Orden {
     }
 
     public void setEstado(EstadoOrden estado) {
-        this.estado = estado != null ? estado : EstadoOrden.PENDIENTE;
+        this.estado = estado;
     }
-
     public String getReseña() {
         return reseña;
     }
@@ -79,14 +72,11 @@ public class Orden {
         this.reseña = reseña;
     }
 
-    public void agregarPlato(Plato plato) {
-        if (this.platos == null) {
-            this.platos = new ArrayList<>();
-        }
-        this.platos.add(plato);
+    public String getIdCocinero() {
+        return idCocinero;
     }
 
-    public ArrayList<Plato> getPlatosSeleccionados() {
-        return getPlatos();
+    public void setIdCocinero(String idCocinero) {
+        this.idCocinero = idCocinero;
     }
 }

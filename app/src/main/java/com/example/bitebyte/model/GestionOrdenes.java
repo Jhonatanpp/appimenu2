@@ -1,10 +1,7 @@
 package com.example.bitebyte.model;
 
-
 import android.util.Log;
-
 import com.google.firebase.database.*;
-
 import java.util.TreeMap;
 
 public class GestionOrdenes {
@@ -17,7 +14,7 @@ public class GestionOrdenes {
     }
 
     public void agregarOrden(Orden orden) {
-        refOrdenes.child(orden.getId()).setValue(orden);
+        refOrdenes.child(orden.getIdOrden()).setValue(orden);
     }
 
     public void borrarOrden(String idOrden) {
@@ -40,8 +37,8 @@ public class GestionOrdenes {
                 ordenes.clear();
                 for (DataSnapshot ds : snapshot.getChildren()) {
                     Orden orden = ds.getValue(Orden.class);
-                    if (orden != null && orden.getId() != null) {
-                        ordenes.put(orden.getId(), orden);
+                    if (orden != null && orden.getIdOrden() != null) {
+                        ordenes.put(orden.getIdOrden(), orden);
                     } else {
                         Log.w("GestionOrdenes", "Orden nula o sin ID en snapshot");
                     }

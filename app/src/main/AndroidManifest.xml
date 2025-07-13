@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.bitebyte">
 
+    <!-- Permiso para acceder a Internet (Firebase) -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -16,7 +17,7 @@
         android:theme="@style/Theme.BiteByte"
         tools:targetApi="31">
 
-        <!-- Pantalla de inicio -->
+        <!-- Splash: determina rol y redirige -->
         <activity
             android:name=".model.SplashActivity"
             android:exported="true">
@@ -26,13 +27,30 @@
             </intent-filter>
         </activity>
 
-        <!-- ACTIVIDADES -->
-        <activity android:name=".model.MainActivity" android:exported="false" />
-        <activity android:name=".model.RegistrarUsuarioActivity" android:exported="false" />
-        <activity android:name=".model.HomeActivity" android:exported="false" />
-        <activity android:name=".model.LoginActivity" android:exported="false" />
-        <activity android:name=".model.MenuClienteActivity" android:exported="false" />
-        <activity android:name=".model.MenuMeseroActivity" android:exported="false" />
+        <!-- Flujo de autenticación -->
+        <activity android:name=".model.MainActivity" android:exported="false"/>
+        <activity android:name=".model.LoginActivity" android:exported="false"/>
+        <activity android:name=".model.RegistrarUsuarioActivity" android:exported="false"/>
+
+        <!-- Menús según rol -->
+        <activity android:name=".model.MenuClienteActivity" android:exported="false"/>
+        <activity android:name=".model.MenuMeseroActivity" android:exported="false"/>
+        <activity android:name=".model.MisPlatosActivity" android:exported="false"/>
+
+        <!-- Cocina -->
+        <activity android:name=".model.PersonalizarPlatoActivity" android:exported="false"/>
+        <activity android:name=".model.RegistrarPlato" android:exported="false"/>
+
+        <!-- Mesas y pedidos -->
+        <activity android:name=".model.UnirseMesaActivity" android:exported="false"/>
+        <activity android:name=".model.MesasActivity" android:exported="false"/>
+        <activity android:name=".model.SeleccionarPlatosActivity" android:exported="false"/>
+        <activity android:name=".model.MisPedidosCocinaActivity" android:exported="false"/>
+        <activity android:name=".model.MonitorearMesasActivity" android:exported="false"/>
+
+        <!-- Pedidos entrantes y seguimiento -->
+        <activity android:name=".model.PedidosEntrantesActivity" android:exported="false"/>
+        <activity android:name=".model.HistorialPedidosActivity" android:exported="false"/>
 
     </application>
 </manifest>
