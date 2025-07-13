@@ -1,5 +1,6 @@
 package com.example.bitebyte.model;
 
+import com.example.bitebyte.LoginActivity;
 import com.example.bitebyte.R;
 import android.content.Intent;
 import android.os.Bundle;

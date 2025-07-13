@@ -1,4 +1,4 @@
-package com.example.bitebyte.model;
+package com.example.bitebyte;
 
 
 import android.content.Intent;
@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.bitebyte.R;
+import com.example.bitebyte.model.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {

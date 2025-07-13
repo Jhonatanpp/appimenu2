@@ -38,6 +38,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-database")
     implementation("com.google.firebase:firebase-auth")
+    implementation("com.airbnb.android:lottie:6.3.0")
 
     implementation(libs.appcompat)
     implementation(libs.material)

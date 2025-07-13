@@ -9,13 +9,13 @@
     android:background="#FFF8EC">
 
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="171dp"
-        android:layout_height="183dp"
-        android:src="@drawable/restaurant"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="390dp" />
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="171dp"-->
+<!--        android:layout_height="183dp"-->
+<!--        android:src="@drawable/restaurant"-->
+<!--        tools:layout_editor_absoluteX="120dp"-->
+<!--        tools:layout_editor_absoluteY="390dp" />-->
 
 
     <TextView
