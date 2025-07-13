@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.bitebyte">
@@ -25,12 +26,13 @@
             </intent-filter>
         </activity>
 
-        <!-- ACTIVIDAD PRINCIPAL -->
+        <!-- ACTIVIDADES -->
         <activity android:name=".model.MainActivity" android:exported="false" />
         <activity android:name=".model.RegistrarUsuarioActivity" android:exported="false" />
         <activity android:name=".model.HomeActivity" android:exported="false" />
         <activity android:name=".model.LoginActivity" android:exported="false" />
         <activity android:name=".model.MenuClienteActivity" android:exported="false" />
         <activity android:name=".model.MenuMeseroActivity" android:exported="false" />
+
     </application>
 </manifest>
