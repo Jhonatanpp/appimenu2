@@ -1,41 +1,71 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F9FAFB"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <!-- Imagen de fondo automáticamente abajo -->
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@android:color/white"
-        android:padding="24dp"
-        android:clipToOutline="true"
-        android:outlineProvider="background"
-        android:elevation="8dp"
-        android:layout_margin="16dp">
+        android:layout_height="match_parent"
+        android:src="@drawable/restaurante3"
+        android:scaleType="centerCrop"
+        android:alpha="0.99" />
 
-        <Button
-            android:id="@+id/btnIngresar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ingresar"
-            android:textColor="#FFF"
-            android:background="@drawable/rounded_button"
-            android:padding="16dp" />
+    <!-- Tu ConstraintLayout encima -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btnCrearUsuario"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Crear Usuario"
-            android:textColor="#FFF"
-            android:background="@drawable/rounded_button_secondary"
-            android:padding="16dp"
-            android:layout_marginTop="16dp" />
-    </LinearLayout>
-</LinearLayout>
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@android:color/white"
+                android:padding="4dp"
+                android:clipToOutline="true"
+                android:outlineProvider="background"
+                android:elevation="8dp"
+                android:layout_margin="16dp">
+
+                <Button
+                    android:id="@+id/btnIngresar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ingresar"
+                    android:textColor="#FFF"
+                    android:background="@drawable/rounded_button"
+                    android:padding="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@android:color/white"
+                android:padding="4dp"
+                android:clipToOutline="true"
+                android:outlineProvider="background"
+                android:elevation="8dp"
+                android:layout_margin="16dp">
+
+                <Button
+                    android:id="@+id/btnCrearUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Crear Usuario"
+                    android:textColor="#FFF"
+                    android:background="@drawable/rounded_button_secondary"
+                    android:padding="16dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
+
