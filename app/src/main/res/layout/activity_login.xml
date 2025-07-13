@@ -1,83 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layout_login"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F9FAFB"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp"
-    tools:context=".model.LoginActivity">
+    android:padding="16dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <!-- Logo centrado arriba -->
+    <ImageView
+        android:id="@+id/loginLogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="92dp"
+        android:src="@drawable/bitebyte_user"
+        android:contentDescription="Logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Card contenedora -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@android:color/white"
-        android:elevation="8dp"
-        android:padding="24dp"
-        android:clipToOutline="true"
-        android:outlineProvider="background"
-        android:layout_margin="16dp">
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintTop_toBottomOf="@id/loginLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:src="@drawable/bitebyte_user"
-            android:contentDescription="Logo"
-            android:layout_marginBottom="24dp" />
-
-        <EditText
-            android:id="@+id/editTextNombre"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre"
-            android:background="@drawable/input_background"
-            android:padding="14dp"
-            android:layout_marginBottom="12dp" />
+            android:orientation="vertical"
+            android:padding="24dp">
 
-        <EditText
-            android:id="@+id/editTextCorreo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Correo"
-            android:inputType="textEmailAddress"
-            android:background="@drawable/input_background"
-            android:padding="14dp"
-            android:layout_marginBottom="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio de Sesión"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:layout_marginBottom="12dp"/>
 
-        <EditText
-            android:id="@+id/editTextContrasena"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:background="@drawable/input_background"
-            android:padding="14dp"
-            android:layout_marginBottom="12dp" />
+            <EditText
+                android:id="@+id/editTextCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Correo electrónico"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/input_background"
+                android:paddingHorizontal="12dp"
+                android:layout_marginTop="8dp"/>
 
-        <Spinner
-            android:id="@+id/spinnerRol"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_background"
-            android:padding="14dp"
-            android:layout_marginBottom="20dp"
-            />
+            <EditText
+                android:id="@+id/editTextContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:background="@drawable/input_background"
+                android:paddingHorizontal="12dp"
+                android:layout_marginTop="16dp"/>
 
-
-        <Button
-            android:id="@+id/buttonLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ingresar o Registrarse"
-            android:textColor="#FFF"
-            android:background="@drawable/rounded_button"
-            android:padding="16dp"
-            android:textStyle="bold"/>
-
-    </LinearLayout>
-</LinearLayout>
+            <Button
+                android:id="@+id/buttonLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Iniciar sesión"
+                android:backgroundTint="#F44336"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="24dp"
+                android:elevation="4dp"
+                android:paddingVertical="14dp"
+                android:stateListAnimator="@drawable/button_elevation_animator"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
